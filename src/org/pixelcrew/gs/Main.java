@@ -6,6 +6,8 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		System.out.println("Hallo World!");
+		System.out.println("Hallo Manuey!");
 	}
 }
+
+
