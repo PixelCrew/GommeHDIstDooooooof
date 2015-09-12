@@ -12,8 +12,8 @@ commands:
     permission: gommesagt.pos
 
   gommesagt:
-    description: GommeSagt Items
-    permission: gommesagt.gommesagt
+    description: GommeSagt Position
+    permission: gommesagt.pos
     
 permissions:
   gommesagt.pos:
