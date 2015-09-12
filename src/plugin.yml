@@ -10,6 +10,10 @@ commands:
     description: GommeSagt Position
     usage: /gspos [META]
     permission: gommesagt.pos
+
+  gommesagt:
+    description: GommeSagt Items
+    permission: gommesagt.gommesagt
     
 permissions:
   gommesagt.pos:
