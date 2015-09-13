@@ -46,6 +46,7 @@ public class BombJacketListener implements Listener {
 			}
 		}
 		}
+		return;
 	}
 	
 	@EventHandler
