@@ -19,7 +19,7 @@ public class PositionCommand implements CommandExecutor {
 			if(args.length == 0) {
 				int position = 0;
 				for(Player player : Bukkit.getOnlinePlayers()) {
-					if(!player.getName().equals(p.getName())) {
+					if(!player.getName().equals(p.getName()) && !player.getName().equals("GommeHD")) {
 						try{
 							position++;
 							player.teleport(new Location(p.getWorld(), Main.instance.getConfig().getDouble("position." + position + ".x"), 
