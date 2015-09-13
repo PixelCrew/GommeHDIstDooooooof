@@ -10,19 +10,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
+import org.pixelcrew.gs.Main;
 
-public class Taser implements Listener{
+public class TaserListener implements Listener{
 	
-	static int stop;
-	 
-
-    public static Plugin plugin;
-   
-    @SuppressWarnings("static-access")
-	public Taser(Plugin plugin){
-            this.plugin = plugin;
-    }
+	public static int stop;
     
     @EventHandler
     public static void onHit(final EntityDamageByEntityEvent e){
@@ -32,7 +24,7 @@ public class Taser implements Listener{
 		final World w = player.getWorld();
     	if(player.getInventory().getItemInHand().equals(item)){
     		
-    		Bukkit.getScheduler().runTaskLater(plugin, new Runnable(){
+    		Bukkit.getScheduler().runTaskLater(Main.instance, new Runnable(){
 
 				public void run() {
 					p.damage(21L);
@@ -40,7 +32,7 @@ public class Taser implements Listener{
 				
 			}, 60L);
     		
-    		stop = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
+    		stop = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instance, new Runnable() {
     			
     			public void run() {
     				if(!p.isDead()){
@@ -48,7 +40,7 @@ public class Taser implements Listener{
     				e.getEntity().teleport(loc);
     				w.playSound(player.getLocation(), Sound.VILLAGER_NO, 10, 1);
     				
-    				Bukkit.getScheduler().runTaskLater(plugin, new Runnable(){
+    				Bukkit.getScheduler().runTaskLater(Main.instance, new Runnable(){
 
 						public void run() {
 							Location loc1 = new Location(e.getEntity().getWorld(), e.getEntity().getLocation().getX(),e.getEntity().getLocation().getY() - 1 , e.getEntity().getLocation().getZ());

@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.pixelcrew.gs.check.CheckListener;
 import org.pixelcrew.gs.manager.PositionCommand;
+import org.pixelcrew.gs.punishments.TaserListener;
 
 public class Main extends JavaPlugin {
 	
@@ -23,6 +24,7 @@ public class Main extends JavaPlugin {
 		
 		/* LISTENER */
 		Bukkit.getPluginManager().registerEvents(new CheckListener(), this);
+		Bukkit.getPluginManager().registerEvents(new TaserListener(), this);
 		
 		System.out.println(" --=<>=---==---===<(O)>===---==---=<>=-- ");
 		System.out.println("   " + JavaPlugin.getPlugin(this.getClass()).getDescription().getFullName() + " plugin loaded...");
