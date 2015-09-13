@@ -1,0 +1,6 @@
+name: GommeSagt
+version: 0.1-ALPHA
+authors: [Crystal, Manuey, SimonSky]
+website: http://pixelcrew.org
+
+main: org.pixelcrew.gs.Main
