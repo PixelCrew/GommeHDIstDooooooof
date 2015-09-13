@@ -22,7 +22,8 @@ public class BombJacketListener implements Listener {
 	static List<Player> tracket = new ArrayList<Player>();
 	
 	@EventHandler
-	public static void onClick(EntityDamageByEntityEvent e){
+	public static void onDamage(EntityDamageByEntityEvent e){
+		if(e.getEntity() instanceof Player){
 		Player p1 = (Player)e.getDamager();
 		Player p2 = (Player)e.getEntity();
 		
@@ -43,6 +44,7 @@ public class BombJacketListener implements Listener {
 				e.setCancelled(true);
 				p2.getInventory().setChestplate(chest);
 			}
+		}
 		}
 	}
 	
