@@ -1,6 +1,5 @@
 package org.pixelcrew.gs.punishments;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -7,10 +7,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.pixelcrew.gs.check.CheckListener;
+import org.pixelcrew.gs.manager.ItemCommand;
 import org.pixelcrew.gs.manager.PositionCommand;
 import org.pixelcrew.gs.manager.PositionListener;
 import org.pixelcrew.gs.punishments.BombJacketListener;
-import org.pixelcrew.gs.punishments.ItemsListener;
 import org.pixelcrew.gs.punishments.TaserListener;
 
 
@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 		
 		/* COMMAND */
 		this.getCommand("gspos").setExecutor(new PositionCommand());
-		this.getCommand("gommesagt").setExecutor(new ItemsListener());
+		this.getCommand("gsitem").setExecutor(new ItemCommand());
 		
 		/* LISTENER */
 		Bukkit.getPluginManager().registerEvents(new CheckListener(), this);
