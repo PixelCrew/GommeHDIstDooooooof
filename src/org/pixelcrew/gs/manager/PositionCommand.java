@@ -36,6 +36,13 @@ public class PositionCommand implements CommandExecutor {
 					Main.instance.saveConfig();
 					return true;
 				}
+				if(args[0].equals("toggle")) {
+					if(Main.instance.gspos.contains(p)) {
+						Main.instance.gspos.remove(p);
+					}else {
+						Main.instance.gspos.add(p);
+					}
+				}
 				Main.instance.getConfig().set("position." + args[0] + ".x", p.getLocation().getX());
 				Main.instance.getConfig().set("position." + args[0] + ".y", p.getLocation().getY());
 				Main.instance.getConfig().set("position." + args[0] + ".z", p.getLocation().getZ());

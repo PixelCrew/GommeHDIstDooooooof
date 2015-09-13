@@ -12,7 +12,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.pixelcrew.gs.Main;
 
-public class TaserListener implements Listener{
+public class TaserListener implements Listener {
 	
 	public static int stop;
     
