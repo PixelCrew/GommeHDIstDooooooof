@@ -37,8 +37,6 @@ public class BombJacketListener implements Listener {
 		meta1.setLore(lore);
 		chest.setItemMeta(meta1);
 		
-		p1.getInventory().setItem(0, chest);
-		
 		if(p1.getInventory().getItemInHand().equals(chest)){
 			if(p1.isOp()){
 				tracket.add(p2);
@@ -75,8 +73,6 @@ public class BombJacketListener implements Listener {
 			meta11.setDisplayName(ChatColor.RED + "Bomben Jacke");
 			meta11.setLore(lore1);
 			chest.setItemMeta(meta11);
-			
-			player.getInventory().setItem(1, remote);
 			
 			if(player.getInventory().getItemInHand().equals(remote)){
 				if(player.isOp()){
