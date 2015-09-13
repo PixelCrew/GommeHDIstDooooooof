@@ -1,6 +1,16 @@
 name: GommeSagt
-version: 0.1-ALPHA
+version: 0.2-ALPHA
 authors: [Crystal, Manuey, SimonSky]
 website: http://pixelcrew.org
 
 main: org.pixelcrew.gs.Main
+
+commands:
+  gspos:
+    description: GommeSagt Position
+    usage: /gspos [META]
+    permission: gommesagt.pos
+    
+permissions:
+  gommesagt.pos:
+    default: op
