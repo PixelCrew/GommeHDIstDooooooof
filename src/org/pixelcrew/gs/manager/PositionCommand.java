@@ -19,7 +19,7 @@ public class PositionCommand implements CommandExecutor {
 			if(args.length == 0) {
 				int position = 0;
 				for(Player player : Bukkit.getOnlinePlayers()) {
-					if(!player.getName().equals(p.getName()) && !player.getName().equals("GommeHD")) {
+					if(!player.getName().equals(p.getName()) || !player.getName().equals("GommeHD")) {
 						try{
 							position++;
 							player.teleport(new Location(p.getWorld(), Main.instance.getConfig().getDouble("position." + position + ".x"), 
@@ -36,11 +36,22 @@ public class PositionCommand implements CommandExecutor {
 					Main.instance.saveConfig();
 					return true;
 				}
-				if(args[0].equals("toggle")) {
-					if(Main.instance.gspos.contains(p)) {
-						Main.instance.gspos.remove(p);
+				if(args[0].equals("togglesneak")) {
+					if(Main.instance.gsposplayer.contains(p)) {
+						Main.instance.gsposplayer.remove(p);
+						p.sendMessage(Main.instance.prefix + "Sneak Mode for saving Position diabled!");
 					}else {
-						Main.instance.gspos.add(p);
+						Main.instance.gsposplayer.add(p);
+						p.sendMessage(Main.instance.prefix + "Sneak Mode for saving Position enabled!");
+					}
+				}
+				if(args[0].equals("togglemove")) {
+					if(!Main.instance.gsposmove) {
+						Main.instance.gsposmove = true;
+						p.sendMessage(Main.instance.prefix + "Player movement is now allowed!");
+					}else {
+						Main.instance.gsposmove = false;
+						p.sendMessage(Main.instance.prefix + "Player movement is now prohibited!");
 					}
 				}
 				Main.instance.getConfig().set("position." + args[0] + ".x", p.getLocation().getX());

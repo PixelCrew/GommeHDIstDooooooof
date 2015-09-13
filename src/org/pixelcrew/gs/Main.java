@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.pixelcrew.gs.check.CheckListener;
 import org.pixelcrew.gs.manager.PositionCommand;
+import org.pixelcrew.gs.manager.PositionListener;
 import org.pixelcrew.gs.punishments.BombJacketListener;
 import org.pixelcrew.gs.punishments.TaserListener;
 
@@ -18,8 +19,9 @@ public class Main extends JavaPlugin {
 	public String prefix = "§8[§6GS§8]§f ";
 	public String err_prefix = "§8[§6GS§8]§c ";
 	
-	public List<Player> gspos = new ArrayList<>();
+	public List<Player> gsposplayer = new ArrayList<>();
 	public int gsposnum = 0;
+	public boolean gsposmove = true;
 	
 	@Override
 	public void onEnable() {
@@ -35,6 +37,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new CheckListener(), this);
 		Bukkit.getPluginManager().registerEvents(new TaserListener(), this);
 		Bukkit.getPluginManager().registerEvents(new BombJacketListener(), this);
+		Bukkit.getPluginManager().registerEvents(new PositionListener(), this);
 		
 		System.out.println(" --=<>=---==---===<(O)>===---==---=<>=-- ");
 		System.out.println("   " + JavaPlugin.getPlugin(this.getClass()).getDescription().getFullName() + " plugin loaded...");
