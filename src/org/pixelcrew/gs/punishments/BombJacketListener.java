@@ -1,5 +1,6 @@
 package org.pixelcrew.gs.punishments;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +23,11 @@ public class BombJacketListener implements Listener {
 	static List<Player> tracket = new ArrayList<Player>();
 	
 	@EventHandler
-	public static void onDamage(EntityDamageByEntityEvent e){
-		if(e.getEntity() instanceof Player){
-		Player p1 = (Player)e.getDamager();
-		Player p2 = (Player)e.getEntity();
+	public static void onDamage(EntityDamageByEntityEvent e1){
+		if(e1.getEntity() instanceof Player){
+		if(e1.getDamager() instanceof Player){
+		Player p1 = (Player)e1.getDamager();
+		Player p2 = (Player)e1.getEntity();
 		
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Spieler schlagen um");
@@ -41,12 +43,13 @@ public class BombJacketListener implements Listener {
 		if(p1.getInventory().getItemInHand().equals(chest)){
 			if(p1.isOp()){
 				tracket.add(p2);
-				e.setCancelled(true);
+				e1.setCancelled(true);
 				p2.getInventory().setChestplate(chest);
 			}
 		}
 		}
-		return;
+		}
+		
 	}
 	
 	@EventHandler

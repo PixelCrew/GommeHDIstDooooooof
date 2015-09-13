@@ -18,6 +18,8 @@ public class TaserListener implements Listener {
     
     @EventHandler
     public static void onHit(final EntityDamageByEntityEvent e){
+    	if(e.getEntity() instanceof Player){
+    	if(e.getDamager() instanceof Player){
     	final Player player = (Player)e.getDamager();
     	final Player p = (Player)e.getEntity();
     	ItemStack item = new ItemStack(Material.IRON_HOE);
@@ -57,6 +59,8 @@ public class TaserListener implements Listener {
     			}
     		}, 0L, 2L);
     	}
+    }
+    }
     }
 
 }
