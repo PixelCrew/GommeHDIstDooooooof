@@ -1,9 +1,9 @@
 package org.pixelcrew.gs.punishments;
 
-import org.bukkit.Effect;
-import org.bukkit.GameMode;
+import java.util.ArrayList;
+
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,7 +32,30 @@ public class ItemsListener implements CommandExecutor {
 		    	  ItemMeta slm3Meta = slm3.getItemMeta();
 		    	  slm3Meta.setDisplayName("§1aawx");
 		    	  slm3.setItemMeta(slm3Meta);
-		    	  p.getInventory().setItem(2, slm3);
+		    	  p.getInventory().setItem(1, slm3);
+		    	  
+		    	  ArrayList<String> lore = new ArrayList<String>();
+		  			lore.add(ChatColor.GRAY + "Spieler schlagen um");
+		  			lore.add(ChatColor.GRAY + "die Jacke anzuziehen!");
+		  			lore.add(ChatColor.GOLD + "Explosive Liebe <3");
+		  			ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
+		  			ItemMeta meta1 = chest.getItemMeta();
+		  			meta1.setDisplayName(ChatColor.RED + "Bomben Jacke");
+		  			meta1.setLore(lore);
+		  			chest.setItemMeta(meta1);
+		  			p.getInventory().setItem(2, chest);
+		  			
+		  			ArrayList<String> lore1 = new ArrayList<String>();
+					lore1.add(ChatColor.GRAY + "Rechtsklick um den");
+					lore1.add(ChatColor.GRAY + "Spieler in die Luft");
+					lore1.add(ChatColor.GRAY + "zu Jagen!" + ChatColor.RED + "#Gommemode");
+					
+					ItemStack remote = new ItemStack(Material.REDSTONE);
+					ItemMeta meta11 = remote.getItemMeta();
+					meta11.setDisplayName(ChatColor.RED + "Bomben Remote");
+					meta11.setLore(lore1);
+					remote.setItemMeta(meta11);
+					p.getInventory().setItem(3, remote);
 		        }
 		      
 	return false;

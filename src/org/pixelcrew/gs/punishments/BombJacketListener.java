@@ -1,6 +1,5 @@
 package org.pixelcrew.gs.punishments;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,7 +88,7 @@ public class BombJacketListener implements Listener {
 						world.playEffect(target.getLocation(), Effect.EXPLOSION_HUGE, null);
 						world.playSound(target.getLocation(), Sound.EXPLODE, 10, 1);
 						target.getInventory().remove(chest);
-						target.damage(21F);
+						target.damage(100F);
 						tracket.remove(count);
 						count++;
 					}
