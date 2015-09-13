@@ -1,5 +1,7 @@
 package org.pixelcrew.gs.punishments;
 
-public class TeaserListener {
+import org.bukkit.event.Listener;
+
+public class TeaserListener implements Listener {
 
 }
