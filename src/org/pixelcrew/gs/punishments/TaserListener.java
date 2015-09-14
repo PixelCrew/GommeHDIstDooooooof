@@ -33,12 +33,12 @@ public class TaserListener implements Listener {
     	tasermeta.setLore(lore);
     	taser.setItemMeta(tasermeta);
     	
-    	
     	if(e.getEntity() instanceof Player){
     	if(e.getDamager() instanceof Player){
     	final Player player = (Player)e.getDamager();
     	final Player p = (Player)e.getEntity();
 		final World w = player.getWorld();
+		
 		if(player.isOp()){
     	if(player.getInventory().getItemInHand().equals(taser)){
     		

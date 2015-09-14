@@ -51,7 +51,6 @@ public class GuillotioneListener implements Listener{
 		    			w.playSound(p2.getLocation(), Sound.ENDERDRAGON_HIT, 10, 1);
 		    			w.playSound(p2.getLocation(), Sound.GHAST_SCREAM2, 10, 1);
 		    			e.setCancelled(true);
-		    			p1.sendMessage("Test");
 		    			ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
 		    			ItemStack hose = new ItemStack(Material.LEATHER_LEGGINGS);
 		    			ItemStack schuhe = new ItemStack(Material.LEATHER_BOOTS);
