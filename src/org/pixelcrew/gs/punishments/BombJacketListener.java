@@ -19,34 +19,34 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BombJacketListener implements Listener {
 	
-	static List<Player> tracket = new ArrayList<Player>();
+	static List<Player> tracket = new ArrayList<>();
 	
 	@EventHandler
-	public static void onDamage(EntityDamageByEntityEvent e1){
-		if(e1.getEntity() instanceof Player){
-		if(e1.getDamager() instanceof Player){
-		Player p1 = (Player)e1.getDamager();
-		Player p2 = (Player)e1.getEntity();
-		
-		ArrayList<String> lore = new ArrayList<String>();
-		lore.add(ChatColor.GRAY + "Spieler schlagen um");
-		lore.add(ChatColor.GRAY + "die Jacke anzuziehen!");
-		lore.add(ChatColor.GOLD + "Explosive Liebe <3");
-		
-		ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
-		ItemMeta meta1 = chest.getItemMeta();
-		meta1.setDisplayName(ChatColor.RED + "Bomben Jacke");
-		meta1.setLore(lore);
-		chest.setItemMeta(meta1);
-		
-		if(p1.getInventory().getItemInHand().equals(chest)){
-			if(p1.isOp()){
-				tracket.add(p2);
-				e1.setCancelled(true);
-				p2.getInventory().setChestplate(chest);
+	public static void onDamage(EntityDamageByEntityEvent e){
+		if(e.getEntity() instanceof Player){
+			if(e.getDamager() instanceof Player){
+				Player p1 = (Player)e.getDamager();
+				Player p2 = (Player)e.getEntity();
+				
+				ArrayList<String> lore = new ArrayList<>();
+				lore.add(ChatColor.GRAY + "Spieler schlagen um");
+				lore.add(ChatColor.GRAY + "die Jacke anzuziehen!");
+				lore.add(ChatColor.GOLD + "Explosive Liebe <3");
+				
+				ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
+				ItemMeta meta1 = chest.getItemMeta();
+				meta1.setDisplayName(ChatColor.RED + "Bomben Jacke");
+				meta1.setLore(lore);
+				chest.setItemMeta(meta1);
+				
+				if(p1.getInventory().getItemInHand().equals(chest)){
+					if(p1.isOp()){
+						tracket.add(p2);
+						e.setCancelled(true);
+						p2.getInventory().setChestplate(chest);
+					}
+				}
 			}
-		}
-		}
 		}
 		
 	}
@@ -57,7 +57,7 @@ public class BombJacketListener implements Listener {
 		World world = (World)e.getPlayer().getWorld();
 		if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
 			
-			ArrayList<String> lore = new ArrayList<String>();
+			ArrayList<String> lore = new ArrayList<>();
 			lore.add(ChatColor.GRAY + "Rechtsklick um den");
 			lore.add(ChatColor.GRAY + "Spieler in die Luft");
 			lore.add(ChatColor.GRAY + "zu Jagen!" + ChatColor.RED + "#Gommemode");
@@ -68,7 +68,7 @@ public class BombJacketListener implements Listener {
 			meta1.setLore(lore);
 			remote.setItemMeta(meta1);
 			
-			ArrayList<String> lore1 = new ArrayList<String>();
+			ArrayList<String> lore1 = new ArrayList<>();
 			lore1.add(ChatColor.GRAY + "Spieler schlagen um");
 			lore1.add(ChatColor.GRAY + "die Jacke anzuziehen!");
 			lore1.add(ChatColor.GOLD + "Explosive Liebe <3");
@@ -84,7 +84,7 @@ public class BombJacketListener implements Listener {
 					e.setCancelled(true);
 					int count = 0;
 					while (count < tracket.size()){
-						final Player target = (Player)tracket.get(count);
+						final Player target = tracket.get(count);
 						world.playEffect(target.getLocation(), Effect.EXPLOSION_HUGE, null);
 						world.playSound(target.getLocation(), Sound.EXPLODE, 10, 1);
 						target.getInventory().remove(chest);
@@ -92,10 +92,8 @@ public class BombJacketListener implements Listener {
 						tracket.remove(count);
 						count++;
 					}
-				
 				}
 			}
 		}
 	}
-
 }
