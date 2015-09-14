@@ -10,6 +10,7 @@ import org.pixelcrew.gs.check.CheckListener;
 import org.pixelcrew.gs.manager.PositionCommand;
 import org.pixelcrew.gs.manager.PositionListener;
 import org.pixelcrew.gs.punishments.BombJacketListener;
+import org.pixelcrew.gs.punishments.GuillotioneListener;
 import org.pixelcrew.gs.punishments.ItemsListener;
 import org.pixelcrew.gs.punishments.TaserListener;
 
@@ -41,6 +42,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new TaserListener(), this);
 		Bukkit.getPluginManager().registerEvents(new BombJacketListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PositionListener(), this);
+		Bukkit.getPluginManager().registerEvents(new GuillotioneListener(), this);
 		
 		System.out.println(" --=<>=---==---===<(O)>===---==---=<>=-- ");
 		System.out.println("   " + JavaPlugin.getPlugin(this.getClass()).getDescription().getFullName() + " plugin loaded...");
