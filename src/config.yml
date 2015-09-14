@@ -16,9 +16,3 @@
 # - Lines starting with # are commentsand so they are ignored. 
 #
 #
-
-position:
-  1:
-    x: 0.0
-    y: 0.0
-    z: 0.0

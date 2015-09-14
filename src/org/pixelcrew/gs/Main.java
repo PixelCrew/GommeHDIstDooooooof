@@ -25,6 +25,8 @@ public class Main extends JavaPlugin {
 	public int gsposnum = 0;
 	public boolean gsposmove = true;
 	
+	public List<Player> tracket = new ArrayList<>();
+	
 	@Override
 	public void onEnable() {
 		instance = this;

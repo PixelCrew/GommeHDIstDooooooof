@@ -56,6 +56,17 @@ public class ItemCommand implements CommandExecutor {
 				meta3.setLore(lore3);
 				item3.setItemMeta(meta3);
 				p.getInventory().setItem(5, item3);
+				
+				ArrayList<String> lore4 = new ArrayList<>();
+				lore4.add(ChatColor.GRAY + "Mit dem Kompass schlagen");
+				lore4.add(ChatColor.GRAY + "um den Teleporter und die!");
+				lore4.add(ChatColor.GRAY + "Einstellungen zu öffnen!");
+				ItemStack item4 = new ItemStack(Material.COMMAND);
+				ItemMeta meta4 = item4.getItemMeta();
+				meta4.setDisplayName(ChatColor.GOLD + "EINSTELLUNGEN");
+				meta4.setLore(lore4);
+				item4.setItemMeta(meta4);
+				p.getInventory().setItem(8, item4);
 			}
 		}
 		return false;

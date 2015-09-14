@@ -1,7 +1,6 @@
 package org.pixelcrew.gs.punishments;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -16,10 +15,9 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.pixelcrew.gs.Main;
 
 public class BombJacketListener implements Listener {
-	
-	static List<Player> tracket = new ArrayList<>();
 	
 	@EventHandler
 	public static void onDamage(EntityDamageByEntityEvent e){
@@ -41,7 +39,7 @@ public class BombJacketListener implements Listener {
 				
 				if(p1.getInventory().getItemInHand().equals(chest)){
 					if(p1.isOp()){
-						tracket.add(p2);
+						Main.instance.tracket.add(p2);
 						e.setCancelled(true);
 						p2.getInventory().setChestplate(chest);
 					}
@@ -83,13 +81,13 @@ public class BombJacketListener implements Listener {
 				if(player.isOp()){
 					e.setCancelled(true);
 					int count = 0;
-					while (count < tracket.size()){
-						final Player target = tracket.get(count);
+					while (count < Main.instance.tracket.size()){
+						final Player target = Main.instance.tracket.get(count);
 						world.playEffect(target.getLocation(), Effect.EXPLOSION_HUGE, null);
 						world.playSound(target.getLocation(), Sound.EXPLODE, 10, 1);
 						target.getInventory().remove(chest);
 						target.damage(21F);
-						tracket.remove(count);
+						Main.instance.tracket.remove(count);
 						count++;
 					}
 				}
