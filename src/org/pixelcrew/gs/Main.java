@@ -11,7 +11,6 @@ import org.pixelcrew.gs.manager.PositionCommand;
 import org.pixelcrew.gs.manager.PositionListener;
 import org.pixelcrew.gs.punishments.BombJacketListener;
 import org.pixelcrew.gs.punishments.GuillotioneListener;
-import org.pixelcrew.gs.punishments.ItemsListener;
 import org.pixelcrew.gs.punishments.TaserListener;
 
 
@@ -35,7 +34,6 @@ public class Main extends JavaPlugin {
 		
 		/* COMMAND */
 		this.getCommand("gspos").setExecutor(new PositionCommand());
-		this.getCommand("gommesagt").setExecutor(new ItemsListener());
 		
 		/* LISTENER */
 		Bukkit.getPluginManager().registerEvents(new CheckListener(), this);
