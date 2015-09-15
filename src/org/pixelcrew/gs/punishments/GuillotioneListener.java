@@ -42,10 +42,9 @@ public class GuillotioneListener implements Listener{
 		    	tasermeta.setLore(lore);
 		    	Axe.setItemMeta(tasermeta);
 		    	
-		    	p1.getInventory().setItem(8, Axe);
-		    	
 		    	if(p1.getInventory().getItemInHand().equals(Axe)){
 		    		if(p2.isSneaking()){
+		    			if(p1.isOp()){
 		    			World w = p2.getWorld();
 		    			tracket.add(p2);
 		    			w.playSound(p2.getLocation(), Sound.ENDERDRAGON_HIT, 10, 1);
@@ -87,6 +86,7 @@ public class GuillotioneListener implements Listener{
 		    		}
 		    	}
 			}
+		}
 		}
 	}
 	

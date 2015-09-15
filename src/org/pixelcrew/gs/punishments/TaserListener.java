@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -57,6 +58,7 @@ public class TaserListener implements Listener {
     				Location loc = new Location(p.getWorld(), p.getLocation().getX(), p.getLocation().getY() + 1, p.getLocation().getZ());
     				p.teleport(loc);
     				w.playSound(player.getLocation(), Sound.CREEPER_HISS, 10, 1);
+    				w.playEffect(loc, Effect.FLAME, 2);
     				
     				Bukkit.getScheduler().runTaskLater(Main.instance, new Runnable(){
 
@@ -64,6 +66,7 @@ public class TaserListener implements Listener {
 							Location loc = new Location(p.getWorld(), p.getLocation().getX(), p.getLocation().getY() - 1, p.getLocation().getZ());
 							p.teleport(loc);
 							w.playSound(player.getLocation(), Sound.CREEPER_HISS, 10, 1);
+							w.playEffect(loc, Effect.FLAME, 2);
 						}
     					
     				}, 2L);
