@@ -27,7 +27,7 @@ public class TaserListener implements Listener {
     	ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Spieler schlagen");
 		lore.add(ChatColor.GRAY + "um ihn zu elektrisieren");
-		lore.add(ChatColor.GOLD + "#ElektroGomne");
+		lore.add(ChatColor.GOLD + "#ElektroGomme");
     	ItemStack taser = new ItemStack(Material.IRON_HOE);
     	ItemMeta tasermeta = taser.getItemMeta();
     	tasermeta.setDisplayName(ChatColor.YELLOW + "Elektro Gomme");
