@@ -14,6 +14,7 @@ import org.pixelcrew.gs.punishments.GuillotioneListener;
 import org.pixelcrew.gs.punishments.MeteorListener;
 import org.pixelcrew.gs.punishments.RoketListener;
 import org.pixelcrew.gs.punishments.TaserListener;
+import org.pixelcrew.gs.punishments.punishmentsListener;
 
 
 public class Main extends JavaPlugin {
@@ -45,6 +46,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new GuillotioneListener(), this);
 		Bukkit.getPluginManager().registerEvents(new MeteorListener(), this);
 		Bukkit.getPluginManager().registerEvents(new RoketListener(), this);
+		Bukkit.getPluginManager().registerEvents(new punishmentsListener(), this);
 		
 		System.out.println(" --=<>=---==---===<(O)>===---==---=<>=-- ");
 		System.out.println("   " + JavaPlugin.getPlugin(this.getClass()).getDescription().getFullName() + " plugin loaded...");

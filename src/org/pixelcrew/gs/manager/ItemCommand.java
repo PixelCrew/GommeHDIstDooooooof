@@ -16,7 +16,8 @@ public class ItemCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args){
 		if(sender instanceof Player) {
 			Player player = (Player)sender;
-			
+			if(player.isOp()){
+			if(label.equalsIgnoreCase("gsgive")){
 			if(args.length == 0) {
 				player.sendMessage(ChatColor.GOLD + "Du hast nun die " + ChatColor.RED + "GommeSagt " + ChatColor.GOLD + "Items!");
 				
@@ -72,13 +73,25 @@ public class ItemCommand implements CommandExecutor {
 		    	meteormeta.setLore(meteorlore);
 		    	meteor.setItemMeta(meteormeta);
 		    	
-		    	player.getInventory().setItem(0, chest);
-		    	player.getInventory().setItem(1, remote);
-		    	player.getInventory().setItem(3, taser);
-		    	player.getInventory().setItem(5, axe);
-		    	player.getInventory().setItem(7, meteor);
+		    	ArrayList<String> roketlore = new ArrayList<String>();
+				roketlore.add(ChatColor.GRAY + "Spieler schlagen um");
+				roketlore.add(ChatColor.GRAY + "ihn auf den Mond zu");
+				roketlore.add(ChatColor.GRAY + "schiessen! " + ChatColor.DARK_BLUE + "#MOON");
+				ItemStack roket = new ItemStack(Material.FIREWORK);
+				ItemMeta roketmeta = roket.getItemMeta();
+				roketmeta.setDisplayName(ChatColor.GOLD + "Travel to the Moon");
+				roketmeta.setLore(roketlore);
+				roket.setItemMeta(roketmeta);
+		    	
+		    	player.getInventory().setItem(9, chest);
+		    	player.getInventory().setItem(11, taser);
+		    	player.getInventory().setItem(13, axe);
+		    	player.getInventory().setItem(15, meteor);
+		    	player.getInventory().setItem(17, roket);
 				return true;
 			}
+		}
+	}
 		}
 		return false;
 	}
