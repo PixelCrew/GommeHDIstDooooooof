@@ -6,7 +6,6 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.pixelcrew.gs.check.CheckListener;
 import org.pixelcrew.gs.manager.ItemCommand;
 import org.pixelcrew.gs.manager.PositionCommand;
 import org.pixelcrew.gs.manager.PositionListener;
@@ -39,7 +38,6 @@ public class Main extends JavaPlugin {
 		this.getCommand("gsgive").setExecutor(new ItemCommand());
 		
 		/* LISTENER */
-		Bukkit.getPluginManager().registerEvents(new CheckListener(), this);
 		Bukkit.getPluginManager().registerEvents(new TaserListener(), this);
 		Bukkit.getPluginManager().registerEvents(new BombJacketListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PositionListener(), this);
