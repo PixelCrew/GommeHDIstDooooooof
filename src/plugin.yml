@@ -10,13 +10,10 @@ commands:
     description: GommeSagt Position
     usage: /gspos [META]
     permission: gommesagt.pos
-  gss:
-    description: Straf Item
-    usage: /gsgive
-  gommesagtstrafen:
+  gspunish:
     description: Strafauswahl
-    usage: /<command>
-  gommegive:
+    usage: /gspunish
+  gsitem:
     description: GommeSagt Item
     
 permissions:

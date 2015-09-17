@@ -27,7 +27,7 @@ public class punishmentsListener implements Listener, CommandExecutor{
 	
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args){
 		Player player = (Player)sender;
-		if(label.equalsIgnoreCase("gss") || label.equalsIgnoreCase("gommesagtstrafen")){
+		if(label.equalsIgnoreCase("gspunish")){
 			ArrayList<String> remotelore = new ArrayList<String>();
 			remotelore.add(ChatColor.GRAY + "Rechtsklick um den");
 			remotelore.add(ChatColor.GRAY + "Spieler in die Luft");
@@ -183,27 +183,32 @@ public class punishmentsListener implements Listener, CommandExecutor{
 		}
 		
 		Bukkit.getScheduler().runTaskLater(Main.instance, new Runnable(){
-
+			World world = (World)e.getWhoClicked().getWorld();
 			public void run() {
 				if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.RED + "Bomben Jacke")){
 					player.getInventory().setItem(7, chest);
 					player.getInventory().setItem(8, remote);
+					world.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 					e.getView().close();
 				}
 				else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.YELLOW + "Elektro Gomme")){
 					player.getInventory().setItem(8, taser);
+					world.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 					e.getView().close();
 				}
 				else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.RED + "Halsabschneider")){
 					player.getInventory().setItem(8, axe);
+					world.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 					e.getView().close();
 				}
 				else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.RED + "Meteor Spawner")){
 					player.getInventory().setItem(8, meteor);
+					world.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 					e.getView().close();
 				}
 				else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.GOLD + "Travel to the Moon")){
 					player.getInventory().setItem(8, roket);
+					world.playSound(player.getLocation(), Sound.LEVEL_UP, 10, 1);
 					e.getView().close();
 				}
 			}

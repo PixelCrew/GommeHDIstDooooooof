@@ -16,7 +16,7 @@ public class ItemCommand implements CommandExecutor {
 	
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args){
 		Player player = (Player)sender;
-		if(label.equalsIgnoreCase("gommegive")){
+		if(label.equalsIgnoreCase("gsitem")){
 			
 			ArrayList<String> plore = new ArrayList<String>();
 			plore.add(ChatColor.GRAY + "Rechtsklick um das");
@@ -31,15 +31,14 @@ public class ItemCommand implements CommandExecutor {
 			ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
 			ItemMeta itemmeta = item.getItemMeta();
 			itemmeta.setDisplayName(ChatColor.DARK_RED + "Gommemode");
-			item.addEnchantment(Enchantment.DAMAGE_ALL, 5);
 			item.setItemMeta(itemmeta);
+			item.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 1000);
 			
 			ItemStack bow = new ItemStack(Material.BOW);
 			ItemMeta bowmeta = bow.getItemMeta();
 			bowmeta.setDisplayName(ChatColor.DARK_BLUE + "Gommebow");
-			bow.addEnchantment(Enchantment.ARROW_DAMAGE, 4);
-			bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
 			bow.setItemMeta(bowmeta);
+			bow.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 1000);
 			
 			ItemStack arrow = new ItemStack(Material.ARROW);
 			

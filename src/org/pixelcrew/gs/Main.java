@@ -37,9 +37,8 @@ public class Main extends JavaPlugin {
 		
 		/* COMMAND */
 		this.getCommand("gspos").setExecutor(new PositionCommand());
-		this.getCommand("gommegive").setExecutor(new ItemCommand());
-		this.getCommand("gss").setExecutor(new punishmentsListener());
-		this.getCommand("gommesagtstrafen").setExecutor(new punishmentsListener());
+		this.getCommand("gsitem").setExecutor(new ItemCommand());
+		this.getCommand("gspunish").setExecutor(new punishmentsListener());
 		
 		/* LISTENER */
 		Bukkit.getPluginManager().registerEvents(new TaserListener(), this);
