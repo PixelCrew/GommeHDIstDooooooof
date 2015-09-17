@@ -1,5 +1,5 @@
 name: GommeSagt
-version: 0.3-ALPHA
+version: 0.4-ALPHA
 authors: [Crystal, Manuey, SimonSky]
 website: http://pixelcrew.org
 
@@ -11,13 +11,18 @@ commands:
     usage: /gspos [META]
     permission: gommesagt.pos
   gspunish:
-    description: Strafauswahl
+    description: GommeSagt Punishment
     usage: /gspunish
+    permission: gommesagt.punish
   gsitem:
     description: GommeSagt Item
+    usage: /gsitem
+    permission: gommesagt.item
     
 permissions:
   gommesagt.pos:
     default: op
   gommesagt.item:
+    default: op
+  gommesagt.punish:
     default: op
